@@ -29,7 +29,7 @@ class DelugeMeta < Formula
   depends_on "pycparser"
   depends_on "pygobject3"
   depends_on "python-setuptools"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -147,7 +147,7 @@ class DelugeMeta < Formula
   end
 
   def install
-    virtualenv_install_with_resources using: "python@3.12"
+    virtualenv_install_with_resources using: "python@3.13"
 
     %w[deluge deluge-console deluge-gtk deluge-web deluged].each do |cmd|
       (bin/cmd).write_env_script(libexec/"bin/#{cmd}", PYTHONPATH: ENV["PYTHONPATH"])
